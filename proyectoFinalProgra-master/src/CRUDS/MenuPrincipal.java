@@ -1076,16 +1076,19 @@ public class MenuPrincipal extends javax.swing.JDialog {
 
     //Save boton in user section
     private void btnGuardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardar1ActionPerformed
-        int cedula = Integer.parseInt(txtNombre.getText());
-        String nombre = txtApellidos.getText();
-        String correo = txtEmail.getText();
+        String nombre = txtNombre.getText();
+        String apellidos = txtApellidos.getText();
+        String email = txtEmail.getText();
+        String username = txtUsername.getText();
+        String password_User = txtPassword_User.getText();
+        String rol = txtRol.getText();
         
         PreparedStatement ps = null;
         Connection con = null;
         
         try{
            Conexion conecta = new Conexion();
-           con = (Connection) Conexion.getConexion();
+           con = Conexion.getConexion();
            if(con != null){
              System.out.println("Conexion establacida corrrectamente");
            }else{
@@ -1096,11 +1099,11 @@ public class MenuPrincipal extends javax.swing.JDialog {
             ps = con.prepareStatement(sql);
             
             ps.setString(1, nombre);
-            //ps.setString(2, apellidos);
-            //ps.setString(3, email);
-            //ps.setString(4, username);
-            //ps.setString(5, password_User);
-            //ps.setString(6, rol);
+            ps.setString(2, apellidos);
+            ps.setString(3, email);
+            ps.setString(4, username);
+            ps.setString(5, password_User);
+            ps.setString(6, rol);
             
             int rowsAffected = ps.executeUpdate();
             if(rowsAffected > 0){
@@ -1135,7 +1138,6 @@ public class MenuPrincipal extends javax.swing.JDialog {
 
     //Update boton in user section
     private void btnActualizr1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizr1ActionPerformed
-        int id=Integer.parseInt(txtID.getText());
         String nombre = txtNombre.getText();
         String apellidos = txtApellidos.getText();
         String email = txtEmail.getText();
@@ -1156,7 +1158,6 @@ public class MenuPrincipal extends javax.swing.JDialog {
             ps.setString(4, username);
             ps.setString(5, password_User);
             ps.setString(6, rol);
-            ps.setInt(7, id);
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "Registro Modificado");
             limpiarUser();
