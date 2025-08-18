@@ -37,6 +37,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         llamarBarraChart(); 
+        cargarTablaUsuario();
         
     }
 
@@ -68,9 +69,8 @@ public class MenuPrincipal extends javax.swing.JDialog {
         jLabel19 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         btnGuardar1 = new javax.swing.JButton();
-        btnNuevo1 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        tblUsuario = new javax.swing.JTable();
+        tbUsuario = new javax.swing.JTable();
         btnActualizr1 = new javax.swing.JButton();
         btnEliminar1 = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
@@ -79,7 +79,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
         txtPassword_User = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         txtRol = new javax.swing.JTextField();
-        txtID = new javax.swing.JTextField();
+        txtId_usuario = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -249,15 +249,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
             }
         });
 
-        btnNuevo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
-        btnNuevo1.setText("Nuevo");
-        btnNuevo1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevo1ActionPerformed(evt);
-            }
-        });
-
-        tblUsuario.setModel(new javax.swing.table.DefaultTableModel(
+        tbUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -265,12 +257,12 @@ public class MenuPrincipal extends javax.swing.JDialog {
                 "ID", "Nombre", "Apellidos", "Email", "Username", "Contraseña", "Rol"
             }
         ));
-        tblUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+        tbUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblUsuarioMouseClicked(evt);
+                tbUsuarioMouseClicked(evt);
             }
         });
-        jScrollPane4.setViewportView(tblUsuario);
+        jScrollPane4.setViewportView(tbUsuario);
 
         btnActualizr1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Actualizar (2).png"))); // NOI18N
         btnActualizr1.setText("Actualizar");
@@ -300,38 +292,37 @@ public class MenuPrincipal extends javax.swing.JDialog {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addGap(41, 41, 41)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtApellidos)
+                            .addComponent(txtEmail)
+                            .addComponent(txtUsername)
+                            .addComponent(txtPassword_User)
+                            .addComponent(txtRol)))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(btnGuardar1)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnActualizr1)))
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addGap(41, 41, 41)
-                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel27)
-                                    .addComponent(jLabel29)
-                                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(27, 27, 27)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtApellidos)
-                                    .addComponent(txtEmail)
-                                    .addComponent(txtUsername)
-                                    .addComponent(txtPassword_User)
-                                    .addComponent(txtRol))))
                         .addGap(18, 18, 18)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtId_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnGuardar1)
-                            .addComponent(btnActualizr1))
-                        .addGap(47, 47, 47)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnEliminar1)
-                            .addComponent(btnNuevo1))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                        .addGap(28, 28, 28)
+                        .addComponent(btnEliminar1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55))
         );
@@ -347,7 +338,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
                             .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtId_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel18)
@@ -371,12 +362,9 @@ public class MenuPrincipal extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnGuardar1)
-                            .addComponent(btnNuevo1))
-                        .addGap(38, 38, 38)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnActualizr1)
                             .addComponent(btnEliminar1))
-                        .addGap(49, 49, 49))))
+                        .addGap(89, 89, 89))))
         );
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -1025,20 +1013,20 @@ public class MenuPrincipal extends javax.swing.JDialog {
 
     //Elimited boton in user section
     private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
-        int fila = tblUsuario.getSelectedRow();
+        int fila = tbUsuario.getSelectedRow();
         
         if(fila >= 0){
             int confirm = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas eliminar este registro?",
                     "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
             
             if(confirm == JOptionPane.YES_OPTION){
-                int id= Integer.parseInt(tblUsuario.getValueAt(fila, 0).toString());
+                int id= Integer.parseInt(tbUsuario.getValueAt(fila, 0).toString());
                 PreparedStatement ps = null;
                 Connection con = null;
                 
                 try{
                     con = Conexion.getConexion();
-                    ps = con.prepareStatement("DELETE FROM Usuarios WHERE id_usuario");
+                    ps = con.prepareStatement("DELETE FROM Usuarios WHERE id_usuario = ?");
                     ps.setInt(1, id);
                     int rowsAffected = ps.executeUpdate();
                     
@@ -1066,7 +1054,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
                 }
             }
         } else{
-            JOptionPane.showMessageDialog(null, "DEbes seleccionar un registro de la tabla para eliminar");
+            JOptionPane.showMessageDialog(null, "Debes seleccionar un registro de la tabla para eliminar");
         }
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 
@@ -1132,12 +1120,9 @@ public class MenuPrincipal extends javax.swing.JDialog {
         
     }//GEN-LAST:event_btnGuardar1ActionPerformed
 
-    private void btnNuevo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNuevo1ActionPerformed
-
     //Update boton in user section
     private void btnActualizr1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizr1ActionPerformed
+        int id_usuario =Integer.parseInt(txtId_usuario.getText());
         String nombre = txtNombre.getText();
         String apellidos = txtApellidos.getText();
         String email = txtEmail.getText();
@@ -1151,20 +1136,30 @@ public class MenuPrincipal extends javax.swing.JDialog {
         try{
             Conexion conecta = new Conexion();
             con = Conexion.getConexion();
-            ps = con.prepareStatement("UPDATE Usuarios SET nombre=?, apellidos=?, email=?, username=?, password_User=?, rol=? WHERE id_usuario=?");
-            ps.setString(1, nombre);
-            ps.setString(2, apellidos);
-            ps.setString(3, email);
-            ps.setString(4, username);
-            ps.setString(5, password_User);
-            ps.setString(6, rol);
-            ps.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Registro Modificado");
-            limpiarUser();
-            cargarTablaUsuario();
+            if(con != null){
+                ps = con.prepareStatement("UPDATE Usuarios SET nombre=?, apellidos=?, email=?, username=?, password_User=?, rol=? WHERE id_usuario=?");
+                ps.setString(1, nombre);
+                ps.setString(2, apellidos);
+                ps.setString(3, email);
+                ps.setString(4, username);
+                ps.setString(5, password_User);
+                ps.setString(6, rol);
+                ps.setInt(7, id_usuario);
+                
+                int rowsAffected = ps.executeUpdate();
+                if(rowsAffected > 0){
+                    JOptionPane.showMessageDialog(null, "Registro actualizado");
+                    limpiarUser();
+                    cargarTablaUsuario();
+                }else{
+                    JOptionPane.showMessageDialog(null, "No se pudo actualizar el registro");
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Error: no se pudo establecer la conexion con la base de datos");
+            }
             
         }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Error al insertar datos: "+e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al actualizar datos: "+e.getMessage());
             e.printStackTrace();
         }finally{
             try{
@@ -1181,35 +1176,36 @@ public class MenuPrincipal extends javax.swing.JDialog {
     }//GEN-LAST:event_btnActualizr1ActionPerformed
 
     //TableUsuer in user section
-    private void tblUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblUsuarioMouseClicked
+    private void tbUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbUsuarioMouseClicked
         try{
-            int fila = tblUsuario.getSelectedRow();
-            int id = Integer.parseInt(tblUsuario.getValueAt(fila, 0).toString());
+            int fila = tbUsuario.getSelectedRow();
+            int id_usuario = Integer.parseInt(tbUsuario.getValueAt(fila, 0).toString());
             
             PreparedStatement ps;
             ResultSet rs;
             Connection con = Conexion.getConexion();
             
             ps = con.prepareStatement("SELECT nombre, apellidos, email, username, password_User, rol FROM Usuarios WHERE id_usuario = ?");
-            ps.setInt(1, id);
+            ps.setInt(1, id_usuario);
             rs = ps.executeQuery();
             
             if(rs.next()){
-                txtNombre.setText(String.valueOf("nombre"));
-                txtApellidos.setText(String.valueOf("apellido"));
-                txtEmail.setText(String.valueOf("email"));
-                txtUsername.setText(String.valueOf("username"));
-                txtPassword_User.setText(String.valueOf("password_User"));
-                txtRol.setText(String.valueOf("rol"));
+                txtId_usuario.setText(String.valueOf(id_usuario));
+                txtNombre.setText(rs.getString("nombre"));
+                txtApellidos.setText(rs.getString("apellidos"));
+                txtEmail.setText(rs.getString("email"));
+                txtUsername.setText(rs.getString("username"));
+                txtPassword_User.setText(rs.getString("password_User"));
+                txtRol.setText(rs.getString("rol"));
             }
             rs.close();
             ps.close();
             con.close();
         }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Error al obtener los datos: "+ e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error: "+ e.getMessage());
         }
             
-    }//GEN-LAST:event_tblUsuarioMouseClicked
+    }//GEN-LAST:event_tbUsuarioMouseClicked
 
     
     
@@ -1229,28 +1225,28 @@ public class MenuPrincipal extends javax.swing.JDialog {
     //Tables
     //Table User
     private void cargarTablaUsuario(){
-        DefaultTableModel modeloTabla = (DefaultTableModel)tblUsuario.getModel();
+        DefaultTableModel modeloTabla = (DefaultTableModel)tbUsuario.getModel();
         modeloTabla.setRowCount(0);
-        PreparedStatement ps;
-        ResultSet rs;
-        ResultSetMetaData rsmd;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        ResultSetMetaData rsmd = null;
         int columnas;
-        int []anchos={10,50,100,10};
-        for(int i=0; i<tblUsuario.getColumnCount(); i++){
-            tblUsuario.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
+        int []anchos={10,50,50,100,20,20,20};
+        for(int i=0; i<tbUsuario.getColumnCount(); i++){
+            tbUsuario.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
         }
         
         try{
             Conexion conectar = new Conexion();
             Connection con = Conexion.getConexion();
-            ps = con.prepareStatement("Select nombre, apellidos, email, username, password_User, rol FROM Usuarios");
+            ps = con.prepareStatement("Select id_usuario, nombre, apellidos, email, username, password_User, rol FROM Usuarios");
             rs= ps.executeQuery();
             rsmd=rs.getMetaData();
             columnas=rsmd.getColumnCount();
             
             while(rs.next()){
-                Object[] fila = new Object[columnas];
-                for(int i=0; i<columnas; i++){
+                Object[] fila = new Object[modeloTabla.getColumnCount()];
+                for(int i=0; i<modeloTabla.getColumnCount(); i++){
                     fila[i]= rs.getObject(i+1);
                 }
                 modeloTabla.addRow(fila);
@@ -1372,7 +1368,6 @@ public class MenuPrincipal extends javax.swing.JDialog {
     private javax.swing.JButton btnGuardar2;
     private javax.swing.JButton btnMV;
     private javax.swing.JButton btnNuevo;
-    private javax.swing.JButton btnNuevo1;
     private javax.swing.JButton btnNuevo2;
     private javax.swing.JButton btnOS;
     private javax.swing.JButton btnRep;
@@ -1440,7 +1435,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
     private javax.swing.JTable tbCheckout;
     private javax.swing.JTable tbOtrosServicios;
     private javax.swing.JTable tbReservaciones;
-    private javax.swing.JTable tblUsuario;
+    private javax.swing.JTable tbUsuario;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtCantidadNoches;
@@ -1448,7 +1443,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEnviarFactura;
     private javax.swing.JTextField txtGimnasio;
-    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtId_usuario;
     private javax.swing.JTextField txtLavanderia;
     private javax.swing.JTextField txtMasajes;
     private javax.swing.JTextField txtMontoTotal;
