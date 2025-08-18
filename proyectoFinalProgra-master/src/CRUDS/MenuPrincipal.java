@@ -91,7 +91,6 @@ public class MenuPrincipal extends javax.swing.JDialog {
         jLabel25 = new javax.swing.JLabel();
         cbxTipoHabitacion = new javax.swing.JComboBox<>();
         btnGuardar2 = new javax.swing.JButton();
-        btnNuevo2 = new javax.swing.JButton();
         btnActualizar2 = new javax.swing.JButton();
         btnEliminar2 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -113,7 +112,6 @@ public class MenuPrincipal extends javax.swing.JDialog {
         ckAdd3 = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbOtrosServicios = new javax.swing.JTable();
-        btnNuevo = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
@@ -403,9 +401,6 @@ public class MenuPrincipal extends javax.swing.JDialog {
         btnGuardar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/GuardarTodo.png"))); // NOI18N
         btnGuardar2.setText("Guardar");
 
-        btnNuevo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
-        btnNuevo2.setText("Nuevo");
-
         btnActualizar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Actualizar (2).png"))); // NOI18N
         btnActualizar2.setText("Actualizar");
         btnActualizar2.addActionListener(new java.awt.event.ActionListener() {
@@ -452,9 +447,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(63, 63, 63)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnEliminar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnNuevo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(btnEliminar2))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                                 .addComponent(jdcFechaHospedaje, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -499,9 +492,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
                             .addComponent(jLabel25)
                             .addComponent(cbxTipoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnGuardar2)
-                            .addComponent(btnNuevo2))
+                        .addComponent(btnGuardar2)
                         .addGap(28, 28, 28)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnActualizar2)
@@ -572,9 +563,6 @@ public class MenuPrincipal extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(tbOtrosServicios);
 
-        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nuevo.png"))); // NOI18N
-        btnNuevo.setText("Nuevo");
-
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/GuardarTodo.png"))); // NOI18N
         btnGuardar.setText("Guardar");
 
@@ -589,7 +577,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel12Layout.createSequentialGroup()
@@ -612,8 +600,6 @@ public class MenuPrincipal extends javax.swing.JDialog {
                                 .addComponent(btnEliminar))))
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGap(64, 64, 64)
-                        .addComponent(btnNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnGuardar)))
                 .addGap(109, 109, 109)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 711, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -637,9 +623,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
                             .addComponent(jLabel4)
                             .addComponent(ckAdd3))
                         .addGap(38, 38, 38)
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnNuevo)
-                            .addComponent(btnGuardar))
+                        .addComponent(btnGuardar)
                         .addGap(47, 47, 47)
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnEliminar)
@@ -1300,10 +1284,10 @@ public class MenuPrincipal extends javax.swing.JDialog {
         setLocationRelativeTo(null); 
     }
     
-    public JFreeChart crearBarraChart(CategoryDataset datosSensor){
+    public JFreeChart crearBarraChart(CategoryDataset datosHotel){
         //
         JFreeChart barChart = ChartFactory.createBarChart("Hoteles más concurridos", "Canton", "Veces concurridas", 
-                datosSensor, PlotOrientation.VERTICAL, true, true, false);
+                datosHotel, PlotOrientation.VERTICAL, true, true, false);
         //Creacion de panel de tipo Chart panel que lo da la libreria JFreeChart
         return barChart;
     }
@@ -1367,8 +1351,6 @@ public class MenuPrincipal extends javax.swing.JDialog {
     private javax.swing.JButton btnGuardar1;
     private javax.swing.JButton btnGuardar2;
     private javax.swing.JButton btnMV;
-    private javax.swing.JButton btnNuevo;
-    private javax.swing.JButton btnNuevo2;
     private javax.swing.JButton btnOS;
     private javax.swing.JButton btnRep;
     private javax.swing.JButton btnReservacion;
